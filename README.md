@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Hello World
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Solidity program is a simple "Display of Smart Contracts on Front End" program that demonstrates the basic syntax and functionality of the Solidity programming language. The purpose of this program is to serve as a starting point for those who are new to Solidity and want to get a feel for how it works.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The contract of "Games" is in file named "Game.sol"
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Executing program
 
-### `npm test`
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., MyToken.sol). Copy and paste the following code into the file:
 
-### `npm run build`
+```javascript
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// SPDX-License-Identifier: MIT
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+pragma solidity >=0.8.11 ;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+contract Game{
+    string public game;
 
-### `npm run eject`
+    function getGame() public view  returns (string memory){
+        return game;
+    }
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    function setGame(string memory gameName) public {
+        game = gameName;
+    }
+}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.18" (or another compatible version), and then click on the "Compile ErrorHandling.sol" button.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "Game" contract from the dropdown menu, and then click on the "Deploy" button.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is Blockchain based project developed by me.. to run the Project follow the following commands..
+## Description
+To deploy the contract first run the following command in terminal
 
-### Code Splitting
+```javascript
+npx hardhat compile 
+```
+after the contract is compiled
+run this command which will deploy your contract on test net volta this is a whole differnt thing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+npx hardhat run --network volta scripts/deploy.js
+```
 
-### Analyzing the Bundle Size
+after your contract is deployed you will get your contract address in the console
+paste it in src/Constant/constant.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+now that you have deployed your contract just run in terminal
+and your project will run on web browser
+```javascript
+npm  start
+```
 
-### Making a Progressive Web App
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Pulkit Dubey 
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the LICENSE.md file for details
